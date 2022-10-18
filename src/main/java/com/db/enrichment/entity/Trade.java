@@ -15,4 +15,6 @@ public class Trade {
     Date cobDate;
     Double amount;
     Boolean tradeTax;
+    Book book;
+    Counterparty counterparty;
 }
