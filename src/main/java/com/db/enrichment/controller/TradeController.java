@@ -18,14 +18,11 @@ public class TradeController {
             this.tradeService = tradeService;
     }
 
-    @GetMapping("/trade")
-    public Iterable<Trade> list() {
-       return tradeService.list();
-    }
+
 
     @PostMapping("/trade")
     public ResponseEntity<Trade> createTrade(@RequestBody Trade trade) throws Exception {
-        return new ResponseEntity<>(tradeService.save(trade), org.springframework.http.HttpStatus.CREATED);
+        return new ResponseEntity<>(tradeService.enrich(trade), org.springframework.http.HttpStatus.CREATED);
     }
 }
 
