@@ -20,10 +20,15 @@ public class TradeController {
 
 
 
-    @PostMapping("/trade")
-    public ResponseEntity<Trade> createTrade(@RequestBody Trade trade) throws Exception {
-        return new ResponseEntity<>(tradeService.enrich(trade), org.springframework.http.HttpStatus.CREATED);
+    @PostMapping("/trades/enrich")
+    public ResponseEntity<Trade> enrich(@Validated @RequestBody Trade trade) throws Exception {
+        return ResponseEntity.ok(tradeService.enrich(trade));
     }
+
+
+
+
+
 }
 
 

@@ -9,21 +9,22 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Service
 public class TradeService {
 
-        private final Counterparty counterparty;
-        private final Book book;
-        private final NoDataException noDataException;
+    private CounterpartyService counterpartyService;
+    private BookService bookService;
+    private NoDataException noDataException;
 
-        public TradeService(Counterparty counterparty, Counterparty counterparty1, Book book, NoDataException noDataException) {
-            this.counterparty = counterparty1;
-            this.book = book;
-            this.noDataException = noDataException;
+    public TradeService(CounterpartyService counterpartyService, BookService bookService, NoDataException noDataException) {
+        this.counterpartyService = counterpartyService;
+        this.bookService = bookService;
+        this.noDataException = noDataException;
+
 
 
         }
 
         public Trade enrich(Trade trade) throws Exception {
-            trade.setCounterparty(counterparty.getCounterparty(trade.getCounterpartyId()));
-            trade.setBook(book.getBook(trade.getBookId()));
+            trade.setCounterparty(counterpartyService.getCounterparty(trade.getCounterpartyId()));
+            trade.setBook(bookService.getBook(trade.getBookId()));
             return trade;
         }
 
@@ -51,9 +52,8 @@ public class TradeService {
             return noDataException.sendException();
         }
 
-
-
-
-
+        public String getTrade(String id) throws Exception {
+            return "Trade id is " + id;
+        }
 
 }

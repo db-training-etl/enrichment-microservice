@@ -10,7 +10,5 @@ public class Counterparty {
     String source;
     String entity;
 
-    public Counterparty getCounterparty(Integer counterpartyId) {
-            return null;
-    }
+
 }

@@ -9,8 +9,6 @@ public class Book {
     String bookAddress;
     String entity;
 
-    public Book getBook(Integer bookId) {
-        return null;
-    }
+
 
 }
