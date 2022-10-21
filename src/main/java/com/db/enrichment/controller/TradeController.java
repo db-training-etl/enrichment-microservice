@@ -21,7 +21,8 @@ public class TradeController {
 
 
     @PostMapping("/trades/enrich")
-    public ResponseEntity<Trade> enrich(@Validated @RequestBody Trade trade) throws Exception {
+    public ResponseEntity<Trade> enrichTrade(@Validated @RequestBody Trade trade) throws Exception {
+        System.out.printf("Trade id is %s", trade.getId());
         return ResponseEntity.ok(tradeService.enrich(trade));
     }
 

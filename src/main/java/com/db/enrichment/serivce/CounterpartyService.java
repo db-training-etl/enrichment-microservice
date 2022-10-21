@@ -11,7 +11,4 @@ public class CounterpartyService {
             return new Counterparty();
         }
 
-
-
-
 }
