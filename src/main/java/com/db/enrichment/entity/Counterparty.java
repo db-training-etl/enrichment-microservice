@@ -10,5 +10,9 @@ public class Counterparty {
     String source;
     String entity;
 
-
+public class Counterparty {
+    Integer bookId;
+    String bookName;
+    String bookAddress;
+    String entity;
 }

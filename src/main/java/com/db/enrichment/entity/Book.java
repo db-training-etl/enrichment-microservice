@@ -9,6 +9,4 @@ public class Book {
     String bookAddress;
     String entity;
 
-
-
 }

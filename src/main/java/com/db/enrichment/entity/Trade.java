@@ -17,4 +17,5 @@ public class Trade {
     Boolean tradeTax;
     Book book;
     Counterparty counterparty;
+
 }
