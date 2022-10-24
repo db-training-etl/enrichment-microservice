@@ -26,9 +26,6 @@ public class TradeController {
         return ResponseEntity.ok(tradeService.enrich(trade));
     }
 
-
-
-
 }
 
 

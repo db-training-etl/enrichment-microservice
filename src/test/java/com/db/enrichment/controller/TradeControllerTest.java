@@ -44,6 +44,4 @@ class TradeControllerTest {
         //THEN
         assertEquals("{\"id\":1,\"tradeName\":\"hola\",\"bookId\":1,\"country\":\"CA\",\"counterpartyId\":2,\"currency\":\"USD\",\"cobDate\":\"2022-10-10T00:00:00.000+00:00\",\"amount\":10.0,\"tradeTax\":false,\"book\":{\"bookId\":null,\"bookName\":null,\"bookAddress\":null,\"entity\":null},\"counterparty\":{\"counterpartyId\":null,\"counterpartyName\":null,\"source\":null,\"entity\":null}}", contentAsString);
     }
-
-
 }
