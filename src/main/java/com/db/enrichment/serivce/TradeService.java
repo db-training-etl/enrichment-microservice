@@ -17,7 +17,6 @@ public class TradeService {
         this.bookService = bookService;
 
         }
-    }
 
 
         public Trade enrich(Trade trade) throws Exception {
