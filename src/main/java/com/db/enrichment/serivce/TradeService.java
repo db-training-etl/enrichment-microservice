@@ -15,7 +15,9 @@ public class TradeService {
     public TradeService(CounterpartyService counterpartyService, BookService bookService) {
         this.counterpartyService = counterpartyService;
         this.bookService = bookService;
-    }
+
+        }
+
 
         public Trade enrich(Trade trade) throws Exception {
             trade.setCounterparty(counterpartyService.getCounterparty(trade.getCounterpartyId()));

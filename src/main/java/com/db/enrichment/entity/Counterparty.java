@@ -10,5 +10,4 @@ public class Counterparty {
     String source;
     String entity;
 
-
 }

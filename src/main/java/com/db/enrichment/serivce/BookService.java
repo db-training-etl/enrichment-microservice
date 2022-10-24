@@ -6,10 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookService {
 
-
     public Book getBook(Integer bookId) {
         return new Book();
     }
-
 
 }
