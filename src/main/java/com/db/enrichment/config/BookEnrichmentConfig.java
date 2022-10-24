@@ -1,5 +1,5 @@
 package com.db.enrichment.config;
 
-public class BookEnrichment {
+public class BookEnrichmentConfig {
 
 }

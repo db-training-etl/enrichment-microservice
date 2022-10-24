@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Enrich Microservice
+  description: Enrichment Microservice.
+  version: 1.0.0
+servers:
+  - url: 'https://api.example.com'
+paths:
+  /trades/enrich:
+    post:
+      summary: Post trades
+      description: Post trades from the database.
+      operationId: postTrades
+      tags:
+        - trades
+      requestBody:
+        description: Load trades
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Trade'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnrichedTrade'
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    Trade:
+      type: object
+      properties:
+        tradeId:
+          type: string
+        tradeName:
+          type: string
+        bookId:
+          type: integer
+        country:
+          type: string
+        counterpartyId:
+          type: integer
+        currency:
+          type: number
+        cobDate:
+          type: string
+        amount:
+          type: integer
+        tradeTax:
+          type: boolean
+    Counterparty:
+      type: object
+      properties:
+        counterpartyId:
+          type: integer
+        counterpartyName:
+          type: string
+        source:
+          type: string
+        entity:
+          type: string
+    Book:
+      type: object
+      properties:
+        bookId:
+          type: integer
+        bookName:
+          type: string
+        bookAddress:
+          type: string
+        entity:
+          type: string
+    EnrichedTrade:
+      type: object
+      properties:
+        tradeId:
+          type: string
+        tradeName:
+          type: string
+        bookId:
+          type: integer
+        book:
+          $ref: '#/components/schemas/Book'
+        country:
+          type: string
+        counterpartyId:
+          type: integer
+        counterparty:
+          $ref: '#/components/schemas/Counterparty'
+        currency:
+          type: number
+        cobDate:
+          type: string
+        amount:
+          type: integer
+        tradeTax:
+          type: boolean
+
+
+
+
