@@ -18,11 +18,12 @@ public class TradeService {
 
         }
 
-
         public Trade enrich(Trade trade) throws Exception {
             trade.setCounterparty(counterpartyService.getCounterparty(trade.getCounterpartyId()));
             trade.setBook(bookService.getBook(trade.getBookId()));
             return trade;
         }
+
+
 
 }
